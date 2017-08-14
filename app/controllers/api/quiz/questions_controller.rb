@@ -2,6 +2,10 @@ class Api::Quiz::QuestionsController < ApplicationController
   def index
     respond_with Question.all, each_serializer: QuestionSerializer
   end
+  
+  def show
+    respond_with Question.find(params['id']), serializer: QuestionSerializer
+  end
 
   def create
     respond_with :api, :quiz, Question.create(question_params)

@@ -16,6 +16,18 @@ RSpec.describe Api::Quiz::QuestionsController, type: :controller do
       end
     end
   end
+  
+  describe "#show" do
+    context "when GET request come to /questions/:id" do
+      it "renders a json of question" do
+        random_question = Question.all.sample
+        get :show, id: random_question.id, format: :json
+        
+        expect(JSON(response.body)["question"]).to eq(random_question.question)
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 
   describe "#create" do
     context "when POST request come to /questions" do
