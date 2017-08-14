@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SiteController, type: :controller do
-
+RSpec.describe AdminController, type: :controller do
+  
   describe "#index" do
-    context "when request coming to /" do
+    context "when request coming to /admin" do
       it "responds with 200" do
         get :index
         expect(response.status).to eq(200)
