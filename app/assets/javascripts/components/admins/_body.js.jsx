@@ -38,6 +38,7 @@ var AdminBody = React.createClass({
     var questions = this.state.questions.filter((i) => {
       return i.id != question.id
     });
+    
     questions.push(question);
     this.setState({questions: questions});
   },
@@ -53,6 +54,7 @@ var AdminBody = React.createClass({
     return (
       <div>
         <NewQuestion handleSubmit={this.handleSubmit}/>
+        <br/>
         <AllQuestions questions={this.state.questions} handleDelete={this.handleDelete} onUpdate={this.handleUpdate}/>
       </div>
     )
