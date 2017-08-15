@@ -3,7 +3,7 @@ var NewQuestion = React.createClass({
     var question = this.refs.question.value;
     var answer = this.refs.answer.value;
     $.ajax({
-      url: '/api/quiz/questions',
+      url: '/api/v1/questions',
       type: 'POST',
       data: {
         question: {

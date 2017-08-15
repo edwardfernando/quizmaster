@@ -3,7 +3,7 @@ var AdminBody = React.createClass({
     return {questions: []}
   },
   componentDidMount() {
-    $.getJSON('/api/quiz/questions.json', (response) => {
+    $.getJSON('/api/v1/questions.json', (response) => {
       this.setState({questions: response})
     });
   },
@@ -13,7 +13,7 @@ var AdminBody = React.createClass({
   },
   handleDelete(id) {
     $.ajax({
-      url: '/api/quiz/questions/' + id,
+      url: '/api/v1/questions/' + id,
       type: 'DELETE',
       success: () => {
         this.removeQuestionClient(id);
@@ -23,7 +23,7 @@ var AdminBody = React.createClass({
 
   handleUpdate(question) {
     $.ajax({
-      url: '/api/quiz/questions/' + question.id,
+      url: '/api/v1/questions/' + question.id,
       type: 'PUT',
       data: {
         question: question
