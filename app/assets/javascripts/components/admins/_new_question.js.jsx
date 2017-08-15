@@ -20,7 +20,7 @@ var NewQuestion = React.createClass({
     return (
       <div>
         <input ref='question' placeholder='Enter Question'/>
-        <input ref='answer' placeholder='Enter Anaswer'/>
+        <input ref='answer' placeholder='Enter Answer'/>
         <button onClick={this.handleClick}>Submit</button>
       </div>
     )
