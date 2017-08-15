@@ -2,7 +2,7 @@ var AdminHeader = React.createClass({
   render() {
     return (
       <div>
-        <h1>Header Admin!</h1>
+        <h3>Input Question</h3>
       </div>
     )
   }

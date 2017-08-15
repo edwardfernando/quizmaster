@@ -1,10 +1,10 @@
 class Api::Quiz::QuestionsController < ApplicationController
   def index
-    respond_with Question.all, each_serializer: QuestionSerializer
+    respond_with Question.all
   end
   
   def show
-    respond_with Question.find(params['id']), serializer: QuestionSerializer
+    respond_with Question.find(params['id'])
   end
 
   def create
