@@ -6,7 +6,7 @@ class Api::V1::QuizController < ApplicationController
   def check_answer
     q = Question.find(request["id"])
     
-    if q.answer == JSON(request["answer"])["answer"]
+    if NumbersInWords.in_numbers(q.answer) == NumbersInWords.in_numbers(JSON(request["answer"])["answer"])
       respond_with :api, :v1, q, status: :ok
       return
     end

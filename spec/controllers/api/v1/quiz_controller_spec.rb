@@ -34,6 +34,10 @@ RSpec.describe Api::V1::QuizController, type: :controller do
       end
       
       it "humanizes user input" do
+        random_question = Question.all.sample
+        post :check_answer, id: random_question.id, :answer => { :answer => "#{NumbersInWords.in_words(random_question.answer.to_i)}" }.to_json , format: :json
+        
+        expect(response.status).to eq(200)
       end
     end
   end
