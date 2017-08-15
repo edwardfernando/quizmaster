@@ -54,3 +54,4 @@ end
 
 gem 'active_model_serializers'
 gem 'react-rails'
+gem 'numbers_in_words'
