@@ -21,23 +21,26 @@ RSpec.describe Api::V1::QuizController, type: :controller do
     context "when POST request come to /check_answer" do
       it "checks for the answer to be true" do
         random_question = Question.all.sample
-        post :check_answer, id: random_question.id, :answer => { :answer => "#{random_question.answer}" }.to_json , format: :json
+        post :check_answer, id: random_question.id, :answer => "#{random_question.answer}", format: :json
         
         expect(response.status).to eq(200)
+        expect(JSON(response.body)["status"]).to be_truthy
       end
       
       it "handles for wrong answer" do
         random_question = Question.all.sample
-        post :check_answer, id: random_question.id, :answer => { :answer => "xxx" }.to_json , format: :json
+        post :check_answer, id: random_question.id, :answer => "xxx", format: :json
         
-        expect(response.status).to eq(404)
+        expect(response.status).to eq(200)
+        expect(JSON(response.body)["status"]).to be_falsey
       end
       
       it "humanizes user input" do
         random_question = Question.all.sample
-        post :check_answer, id: random_question.id, :answer => { :answer => "#{NumbersInWords.in_words(random_question.answer.to_i)}" }.to_json , format: :json
+        post :check_answer, id: random_question.id, :answer => "#{NumbersInWords.in_words(random_question.answer.to_i)}", format: :json
         
         expect(response.status).to eq(200)
+        expect(JSON(response.body)["status"]).to be_truthy
       end
     end
   end
