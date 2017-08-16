@@ -1,6 +1,6 @@
 class Api::V1::QuizController < ApplicationController
   def random
-    respond_with Question.all.sample
+    render :json => Question.all.sample.as_json(only: [:id, :question])
   end
 
   def check_answer
