@@ -8,7 +8,7 @@ var Body = React.createClass({
   },
 
   generateRandomQuestion() {
-    currentScore = this.state.score;
+    var currentScore = this.state.score;
     $.getJSON('/api/v1/questions/random.json', (response) => {
       this.setState({id: response.id, question: response.question, answerStatus: []})
     });
