@@ -1,4 +1,8 @@
-require('babel-register')();
+require('babel-register')({
+    ignore: /node_modules/,
+    plugins: ['react-require'],
+    extensions: ['.js']
+});
 
 var jsdom = require('jsdom');
 const {
