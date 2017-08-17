@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::Quiz::QuestionsController, type: :controller do
+RSpec.describe Api::V1::QuestionsController, type: :controller do
   
   describe "#index" do
     context "when GET request come to /questions.json" do
