@@ -3,7 +3,7 @@ var NewQuestion = React.createClass({
     var question = this.refs.question.value;
     var answer = this.refs.answer.value;
     $.ajax({
-      url: '/api/v1/questions',
+      url: '/api/quiz/questions',
       type: 'POST',
       data: {
         question: {
@@ -20,7 +20,7 @@ var NewQuestion = React.createClass({
     return (
       <div>
         <input ref='question' placeholder='Enter Question'/>
-        <input ref='answer' placeholder='Enter Answer'/>
+        <input ref='answer' placeholder='Enter Anaswer'/>
         <button onClick={this.handleClick}>Submit</button>
       </div>
     )

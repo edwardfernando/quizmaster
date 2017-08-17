@@ -1,4 +1,4 @@
-class Api::V1::QuestionsController < ApplicationController
+class Api::Quiz::QuestionsController < ApplicationController
   def index
     respond_with Question.all
   end
@@ -8,7 +8,7 @@ class Api::V1::QuestionsController < ApplicationController
   end
 
   def create
-    respond_with :api, :v1, Question.create(question_params)
+    respond_with :api, :quiz, Question.create(question_params)
   end
 
   def destroy
