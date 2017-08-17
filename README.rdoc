@@ -1,6 +1,35 @@
-1) bundle install
-2) rake db:migrate
-3) rake db:seed
-4) rails s
+== How To Run the application
 
-Open http://localhost:3000 to start the quiz mode and http://localhost:3000/admin to manage all questions
+1) bundle install
+
+2) rake db:migrate
+
+3) rake db:seed
+
+4) npm install npm-install-all -g 
+
+5) rails s
+
+Main features:
+- Currently there are 8 predefined questions that will be randomly picked whenever you open http://localhost:3000 in your browser. 
+- As instructed, all answer is assumed to be number only. You can answer it by typing "8" or "eight". It will recognize the inputs automatically and will an instant feedback for you answer wether it is correct or incorrect.
+- You can choose random question and the score will be not cleared.
+- You may edit, delete, or add new question from admin page http://localhost:3000/admin
+
+Technical Stacks:
+- All user interfaces is built with ReactJS
+- Ruby on rails is used as API consumed by UI
+- Default sqlite is used as database
+- Rspec for unit test API, mocha + enzyme + chai for unit test front end.
+
+Some works need to be done:
+Unit test for front end (ReactJS) - Got some unknown while working on this part. Hence I work in separate branch for front end unit test. 
+
+Repository:
+https://github.com/edwardfernando/quizmaster
+
+Please also check ui-test-issue branch to see my progress in fixing the issue I got while working on unit test for frontend: https://github.com/edwardfernando/quizmaster/tree/ui-test-issue
+
+Run the Unit Test:
+- rspec
+- npm test
