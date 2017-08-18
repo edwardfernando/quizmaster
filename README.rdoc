@@ -6,13 +6,15 @@
 
 3) rake db:seed
 
-4) npm install npm-install-all -g 
+4) $ npm install npm-install-all -g
 
-5) rails s
+5) npm-install-all
+
+6) rails s
 
 Main features:
 - Currently there are 8 predefined questions that will be randomly picked whenever you open http://localhost:3000 in your browser. 
-- As instructed, all answer is assumed to be number only. You can answer it by typing "8" or "eight". It will recognize the inputs automatically and will an instant feedback for you answer wether it is correct or incorrect.
+- All answer is assumed to be number only. You can answer it by typing "8" or "eight". It will recognize the inputs automatically and will an instant feedback for you answer wether it is correct or incorrect.
 - You can choose random question and the score will be not cleared.
 - You may edit, delete, or add new question from admin page http://localhost:3000/admin
 
